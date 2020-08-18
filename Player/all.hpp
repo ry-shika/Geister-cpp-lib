@@ -3,3 +3,4 @@
 #include "randomPlayer.hpp"
 #include "MyPlayer.hpp"
 #include "MyPlayer1.hpp"
+#include "MonteCarloPlayerSample.hpp"
