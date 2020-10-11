@@ -33,6 +33,17 @@ public:
             }
         }
 
+        for(const Unit& u: units){
+            if(u.color() == UnitColor::Blue && u.y() == 0){
+                if(u.x() < 3 && u.x() > 0){
+                    return Hand({u, Direction::West});
+                }
+                else if(u.x() < 5){
+                    return Hand({u, Direction::East});
+                }
+            }
+        }
+
         auto legalMoves = candidateHand();
         std::uniform_int_distribution<int> serector1(0, legalMoves.size() - 1);
         auto action = legalMoves[serector1(mt) % legalMoves.size()];
