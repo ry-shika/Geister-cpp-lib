@@ -20,6 +20,18 @@ public:
 
         const std::array<Unit, 16>& units = game.allUnit();
 
+        for(const Unit& u: units){
+            for(const Unit& enemy: units) {
+                if(enemy.color() == UnitColor::unknown || enemy.color() == UnitColor::blue || enemy.color() == UnitColor::red) {
+                    if(enemy.x() == 1 && enemy.y() == 4) {
+                        if(u.x() == 2 && u.y() == 4) {
+                            return Hand(u, Direction::West);
+                        }
+                    }
+                }
+            }
+        }
+
         for(const Unit& u: units) {
             if(u.color() == UnitColor::Blue) {
                 if(u.x() == 0 && u.y() == 0) {
@@ -65,6 +77,7 @@ public:
                 }
             }
         }
+
         
         int mostFrontPos = units[0].y();
         int mostFrontIndex = 0;
