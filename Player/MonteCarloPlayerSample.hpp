@@ -33,13 +33,14 @@ public:
         // 合法手の数だけ子局面を生成する
         std::vector<Simulator> children;
         for(int i = 0; i < legalMoves.size(); i++) {
-            Geister next(game);
+            Geister next = game;
             next.move(legalMoves[i]);
-            Simulator  
+            children.emplace_back(next); 
         }
         
         // 規定回数のプレイアウトを実行
         for (int i = 0; i < legalMoves.size(); i++) {
+            Simulator& child = children[i];
             rewards[i] = children[i].run(100);
         }
 
@@ -48,7 +49,7 @@ public:
         std::size_t distance = std::distance(rewards.begin(), max);
         
         action = legalMoves[distance];
-        
+
         return action;
     }
 };
