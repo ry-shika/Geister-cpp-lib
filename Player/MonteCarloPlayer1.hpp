@@ -9,12 +9,12 @@
 #endif
 
 
-class MonteCarloPlayerSample: public Player{
+class MonteCarloPlayer1: public Player{
     uint32_t playoutCount = PLAYOUT_COUNT;
     cpprefjp::random_device rd;
     std::mt19937 mt; 
 public:
-    MonteCarloPlayerSample(): mt(rd()){
+    MonteCarloPlayer1(): mt(rd()){
     }
 
     virtual std::string decideRed(){
