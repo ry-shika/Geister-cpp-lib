@@ -8,7 +8,6 @@
 #define PLAYOUT_COUNT 100
 #endif
 
-
 class MonteCarloPlayer1: public Player{
     uint32_t playoutCount = PLAYOUT_COUNT;
     cpprefjp::random_device rd;
