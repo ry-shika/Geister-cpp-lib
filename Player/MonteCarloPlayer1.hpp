@@ -11,7 +11,8 @@
 class MonteCarloPlayer1: public Player{
     uint32_t playoutCount = PLAYOUT_COUNT;
     cpprefjp::random_device rd;
-    std::mt19937 mt; 
+    std::mt19937 mt;
+    
 public:
     MonteCarloPlayer1(): mt(rd()){
     }
