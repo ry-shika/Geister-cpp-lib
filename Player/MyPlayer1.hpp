@@ -78,7 +78,6 @@ public:
             }
         }
 
-        
         int mostFrontPos = units[0].y();
         int mostFrontIndex = 0;
         for(int u = 1; u < 8; ++u){
