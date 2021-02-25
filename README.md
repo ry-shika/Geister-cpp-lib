@@ -12,10 +12,9 @@ make -j PLAYER_NAME=MyPlayer PLAYER_CLASS=MyPlayer
 
 ### 接続について
 ```
-./client.out -H "接続先アドレス名" -p 10000 ./MyPlayer.so
+./client.out -H "接続先アドレス名" -p "ポート番号" ./MyPlayer.so
 ```
 これによりサーバーに接続することができる。
-"-p 10000"は1万手を上限としていることを表している。
 
 ## 各ツールについて
 - competition  
